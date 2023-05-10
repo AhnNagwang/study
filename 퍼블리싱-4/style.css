@@ -1,0 +1,30 @@
+.dropdown {
+  width: 150px;
+}
+.dropdown button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: yellowgreen;
+  color: white;
+}
+.dropdown .submenu {
+  display: none;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+.dropdown .submenu a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.dropdown .submenu a:hover {
+  background-color: #eee;
+  color: blue;
+}
