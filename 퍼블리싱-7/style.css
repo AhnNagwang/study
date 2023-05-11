@@ -1,0 +1,42 @@
+body {
+  background-color: dodgerblue;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.gnb {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+
+.gnb a {
+  display: block;
+  font-size: 40px;
+  margin: 10px;
+  transition: 0.5s;
+  color: gray;
+}
+
+.gnb a:before {
+  content: '>';
+  margin-right: 10px;
+  opacity: 0;
+}
+
+.gnb a:hover:before {
+  opacity: 1;
+}
+
+.gnb:hover a {
+  opacity: 0.3;
+}
+
+.gnb a:hover {
+  color: #fff;
+  opacity: 1;
+}
