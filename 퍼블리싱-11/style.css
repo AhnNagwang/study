@@ -1,0 +1,48 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+}
+
+ul,li {
+  list-style: none;
+}
+
+.gnb {
+  display: flex;
+  background-color: #fff;
+  width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+  padding: 50px 30px;
+ 
+}
+
+.gnb li {
+  margin: 10px;
+  width :120px;
+  text-align: center;
+}
+
+.gnb li a{
+  font-size: 14px;
+  position: relative;
+}
+
+.gnb li a:before {
+  content:'';
+  width: 0px;
+  height: 2px;
+  background-color: dodgerblue;
+  position: absolute;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.gnb li a:hover:before {
+  width: 100%;
+}
