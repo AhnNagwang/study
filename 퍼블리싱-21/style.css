@@ -1,23 +1,26 @@
-* {
+body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.tab-inner {}
+.tab-inner {
+}
 input[name=tabmenu] {
   display: none;
 }
 .tabs {
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   position: relative;
-  height: 100vh;
 }
 .items {
+  display: flex;
   width: 300vw;
   height: 100vh;
-  display: flex;
-  position: absolute;
   transition: 0.5s;
+  position: absolute;
 }
 .items div {
   width: 100vw;
@@ -25,35 +28,76 @@ input[name=tabmenu] {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  position: relative;
 }
 
+
 .items div:nth-child(1) {
-  background-color: teal;
+  background: url(./images/photo-01.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 .items div:nth-child(2) {
-  background-color: dodgerblue;
+  background: url(./images/photo-02.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 .items div:nth-child(3) {
-  background-color: yellowgreen;
+  background: url(./images/photo-03.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
+
+.items div:nth-child(1):before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, gold, transparent);
+}
+
+.items div:nth-child(2):before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, crimson, transparent);
+}
+
+.items div:nth-child(3):before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, royalblue, transparent);
+}
+
 
 .items div h1 {
   font-size: 80px;
+  color: #fff;
+  position: relative;
+  transform: translateY(-200px);
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 0.3s;
 }
 .btn {
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   width: 100%;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.336);
 }
 .btn label {
   display: inline-block;
-  width: 50px;
-  height: 5px;
-  background-color: #fff;
+  margin: 5px;
+  color: #fff;  
 }
+
+
 
 input[id=tab1]:checked ~ .tabs .items {
   left: 0;
@@ -67,9 +111,9 @@ input[id=tab3]:checked ~ .tabs .items {
   left: -200vw;
 }
 
-input[id=tab1]:checked ~ .btn label[for=tab1],
-input[id=tab2]:checked ~ .btn label[for=tab2],
-input[id=tab3]:checked ~ .btn label[for=tab3] {
-  background-color: #000;
-  border-radius: 100px;
+input[id=tab1]:checked ~ .tabs .items div:nth-child(1) h1,
+input[id=tab2]:checked ~ .tabs .items div:nth-child(2) h1,
+input[id=tab3]:checked ~ .tabs .items div:nth-child(3) h1 {
+  transform: translateY(0);
+  opacity: 1;
 }
