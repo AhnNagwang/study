@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+p {
+  font-size: 50px;
+  position: relative;
+}
+
+p:before {
+  content: '';
+  width: 0px;
+  height: 2px;
+  background-color: gray;
+  position: absolute;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+p:hover:before {
+  width: 100%;
+}
