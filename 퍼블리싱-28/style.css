@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url(./images/snow-photo.jpg) no-repeat center center fixed;
+}
+
+body:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.549);
+  z-index: -1;
+}
+.search {}
+.search h1 {
+  color: #fff;
+  text-align: center;
+}
+input[type=text] {
+  width: 350px;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 40px 0 0 40px;
+  margin-right: -6px;
+  padding-left: 30px;
+}
+input[type=submit] {
+  width: 100px;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 0 40px 40px 0;
+  background-color: orange;
+  cursor: pointer;
+  color: #fff;
+}
+
+input[type=submit]:hover {
+  background-color: darkgoldenrod;
+}
+
+input[type=text]::placeholder {
+  font-size: 15px;
+  font-style: italic;
+}
