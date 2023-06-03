@@ -1,0 +1,93 @@
+body {
+  color: #222;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+/* Layout */
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+section article {
+  width: 980px;
+  height: 500px;
+}
+.heading {
+  text-align: center;
+}
+
+.heading span {
+  color: crimson;
+  font-size: 24px;
+}
+.heading h2 {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.heading h2 em {
+  font-style: normal;
+  position: relative;
+}
+
+.heading h2 em:after {
+  position: absolute;
+  content: url(images/logo-kakao.png);
+  top: -25px;
+  right: -30px;
+}
+.content {}
+.content > div {
+  width: 50%;
+  float: left;
+  height: 400px;
+  box-sizing: border-box;
+}
+.accordion {}
+.title {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+
+
+.title:hover,
+.title.active {
+  background-color: #203049;
+  color: #fff;
+}
+
+.title.active:after {
+  transform: rotate(90deg);
+  color: orange;
+}
+.title:after {
+  content: '\f105';
+  font-family: fontawesome;
+  position: absolute;
+  right: 10px;
+  top:15px;
+  transition: 0.3s;
+}
+.desc {
+  padding: 15px;
+  display: none;
+}
+
+.desc.active {
+  display: block;
+}
+.image {}
