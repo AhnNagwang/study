@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: #222;
+  font-size: 15px;
+  line-height: 1.6em;
+}
+
+.modal {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -80%);
+ z-index: 5;
+ opacity: 0;
+ transition: 0.5s;
+}
+
+.modal.active {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.modal-content {
+  width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.151);
+  background-color: #fff;
+  display: flex;
+  overflow: hidden;
+}
+.modal-content > div {
+  padding: 20px;
+}
+.photo {
+  flex: 1;
+  background: url(./office.jpg) no-repeat center right;
+  background-size: cover;
+}
+.desc {
+  flex: 2;
+  text-align: center;
+}
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.301);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: #999;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  color: #000;
+}
+
+.desc-content input[type=email] {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 7px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.desc-content input[type=email]::placeholder {
+  color: #bbb;
+  transition: 0.5s;
+}
+
+.desc-content input[type=email]:focus::placeholder {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.desc-content button {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: crimson;
+  cursor: pointer;
+  padding: 7px;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 100%;
+    flex-direction: column;
+  }
+  .modal-content > div {
+    width: 350px;
+  }
+  .photo {
+    flex-basis: 250px;
+  }
+}
